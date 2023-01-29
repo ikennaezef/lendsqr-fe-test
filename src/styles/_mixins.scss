@@ -1,0 +1,17 @@
+@import "./variables";
+
+@mixin mobile {
+	@media (max-width: #{$mobile}) {
+		@content;
+	}
+}
+
+@mixin input-reset {
+	border: none;
+	outline: none;
+}
+
+@mixin button-reset {
+	@include input-reset();
+	cursor: pointer;
+}
