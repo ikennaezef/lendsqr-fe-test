@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.nav_link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	height: 40px;
+	width: 100%;
+	color: $text-main-color;
+	padding-left: 30px;
+	padding: 10px 30px;
+	text-decoration: none;
+	border-left: 3px solid transparent;
+	opacity: 0.6;
+
+	&.active_link {
+		border-left: 3px solid $accent-color;
+		background-color: #f3fcfc;
+		opacity: 1;
+	}
+}
