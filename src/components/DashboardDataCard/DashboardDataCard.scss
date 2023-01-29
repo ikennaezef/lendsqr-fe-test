@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.dataCard_container {
+	background: #ffffff;
+	border: 1px solid rgba(33, 63, 125, 0.06);
+	box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+	border-radius: 4px;
+	width: 240px;
+	height: 160px;
+	padding: 20px 30px;
+
+	.card_inner {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8rem;
+
+		.card_icon {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+		}
+
+		.data_title {
+			font-size: 14px;
+			font-weight: 500;
+			color: $text-light-color;
+		}
+
+		.data_digit {
+			font-size: 24px;
+			font-weight: 600;
+			color: $text-main-color;
+		}
+	}
+}
