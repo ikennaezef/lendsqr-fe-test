@@ -1,0 +1,118 @@
+@import "../../styles/variables";
+
+.loginPage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 100px 60px;
+
+	.page_container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		.loginPage_left {
+			.logo_container {
+				margin-bottom: 4rem;
+				img {
+					width: 174px;
+				}
+			}
+		}
+
+		.loginPage_right {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			& > div {
+				width: 75%;
+				.welcome_title {
+					color: #213f7d;
+					font-size: 40px;
+					font-weight: 700;
+					font-family: "AvenirBold", sans-serif;
+					margin-bottom: 1rem;
+				}
+
+				.subtitle {
+					color: #545f7d;
+					font-size: 20px;
+					font-weight: 400;
+					font-family: "AvenirRegular", sans-serif;
+				}
+
+				.login_form {
+					margin-top: 2rem;
+
+					input {
+						width: 100%;
+						font-family: "AvenirRegular", sans-serif;
+						color: #545f7d;
+					}
+
+					.email_input {
+						outline: none;
+						border: 2px solid rgba(84, 95, 125, 0.15);
+						border-radius: 5px;
+						background: #ffffff;
+						height: 50px;
+						padding: 0.2rem 1rem;
+						margin-bottom: 1.5rem;
+					}
+
+					.password_input_container {
+						display: flex;
+						border: 2px solid rgba(84, 95, 125, 0.15);
+						border-radius: 5px;
+						background: #ffffff;
+						height: 50px;
+						padding: 0.2rem 1rem;
+						margin-bottom: 1.5rem;
+
+						input {
+							outline: none;
+							border: none;
+						}
+
+						#show_password_btn {
+							background: transparent;
+							cursor: pointer;
+							border: none;
+							color: $accent-color;
+							font-size: 0.8rem;
+							font-weight: 600;
+							font-family: "AvenirBold", sans-serif;
+						}
+					}
+
+					.forgot_password_link {
+						color: $accent-color;
+						font-size: 0.8rem;
+						font-weight: 600;
+						font-family: "AvenirRegular", sans-serif;
+						text-decoration: none;
+					}
+
+					.login_btn_container {
+						margin-top: 1.8rem;
+
+						#login_btn {
+							width: 100%;
+							border: none;
+							outline: none;
+							cursor: pointer;
+							background-color: $accent-color;
+							color: #fff;
+							border-radius: 8px;
+							height: 48px;
+							font-weight: 600;
+							font-family: "AvenirRegular", sans-serif;
+							letter-spacing: 0.1em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
