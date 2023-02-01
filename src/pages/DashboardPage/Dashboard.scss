@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+
+.page_container {
+	background: #fbfbfb;
+	.page_grid {
+		display: flex;
+
+		.page_content {
+			padding: 60px;
+
+			.page_title {
+				font-size: 1.5rem;
+				font-weight: 500;
+				color: $text-main-color;
+				margin-bottom: 40px;
+			}
+		}
+	}
+}

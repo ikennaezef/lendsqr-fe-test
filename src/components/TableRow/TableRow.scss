@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.table_row {
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+
+  td {
+    padding: 1.4rem 0.5rem;
+
+    span {
+      color: $text-light-color;
+      font-size: 14px;
+    }
+  }
+
+  .button_cell {
+    position: relative;
+
+    .options_btn {
+      @include button-reset;
+      background: transparent;
+    }
+
+    .options_container {
+      position: absolute;
+      top: 3.5rem;
+      right: -2.8rem;
+      width: 180px;
+      z-index: 20;
+      background: #FFFFFF;
+      border: 1px solid rgba(84, 95, 125, 0.04);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+
+      &>a {
+        text-decoration: none;
+      }
+
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.4rem 0.6rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,132 @@
+@import "../../styles/variables";
+
+.wrapper {
+  .table_container {
+    background: #FFFFFF;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    margin-top: 40px;
+    padding: 30px;
+
+    .table_main {
+      background-color: #fff;
+      width: 100%;
+      border-collapse: collapse;
+
+      thead {
+
+        .table_headings {
+
+          th {
+            color: $text-light-color;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: left;
+            padding-bottom: 30px;
+          }
+        }
+      }
+
+      tbody {
+        margin-top: 2rem;
+
+        tr:last-child {
+          border-bottom: none;
+        }
+      }
+
+    }
+  }
+
+  .table_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .showing_info {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      span {
+        color: $text-light-color;
+        font-size: 14px;
+      }
+
+      #items_showing {
+        background: rgba(33, 63, 125, 0.1);
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        color: $text-main-color;
+        font-size: 14px;
+        font-weight: 500;
+        width: 80px;
+        height: 30px;
+        padding: 0.2rem 0.5rem;
+      }
+    }
+
+    .pagination_container {
+      .paginationBtns {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        list-style: none;
+
+        & a {
+          font-size: 1rem;
+          display: inline-block;
+          padding: 0.1rem;
+          margin: 0.1rem;
+          color: $text-light-color;
+          cursor: pointer;
+          transition: 0.3s ease;
+        }
+
+        .prevBtn,
+        .nextBtn {
+          background: rgba(33, 63, 125, 0.1);
+          border-radius: 4px;
+          height: 24px;
+          width: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &>a:hover {
+          color: yellowgreen;
+          background-color: blue;
+        }
+
+
+        .paginationLink,
+        .paginationBreak {
+          color: $text-light-color;
+          opacity: 0.6;
+        }
+
+        .paginationActive {
+          opacity: 1;
+        }
+
+        .paginationDisabled a {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.error_container {
+  margin-top: 4rem;
+  padding: 0 1rem;
+
+  span {
+    font-size: 1.2rem;
+    color: $text-main-color;
+  }
+}
