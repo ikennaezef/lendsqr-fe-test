@@ -1,0 +1,70 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.page_container {
+  background: #fbfbfb;
+
+  .page_grid {
+    display: flex;
+
+    .page_content {
+      padding: 60px;
+      width: 100%;
+
+      a {
+        text-decoration: none;
+      }
+
+      .button_container {
+        .back_btn {
+          @include button-reset;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: $text-light-color;
+          padding: 0.2rem;
+          background: transparent;
+        }
+      }
+
+      .page_title_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 30px 0px 40px;
+
+        .page_title {
+          font-size: 24px;
+          font-weight: 500;
+          color: $text-main-color;
+        }
+
+        .user_action_buttons {
+          display: flex;
+          align-items: center;
+          gap: 1.2rem;
+
+          button {
+            @include button-reset;
+            background: transparent;
+            height: 40px;
+            width: 170px;
+            border-radius: 8px;
+            font-weight: 600;
+          }
+
+          .blacklist_btn {
+            color: $error-color;
+            border: 1px solid $error-color;
+          }
+
+          .activate_btn {
+            color: $accent-color;
+            border: 1px solid $accent-color;
+          }
+        }
+      }
+
+    }
+  }
+}

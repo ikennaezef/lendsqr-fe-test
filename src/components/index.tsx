@@ -5,3 +5,4 @@ export { default as DashboardDataCard } from "./DashboardDataCard/DashboardDataC
 export { default as DashboardCardsGrid } from "./DashboardCardsGrid/DashboardCardsGrid";
 export { default as DashboardTable } from "./DashboardTable/DashboardTable";
 export { default as TableRow } from "./TableRow/TableRow";
+export { default as UserInfo } from "./UserInfo/UserInfo";
