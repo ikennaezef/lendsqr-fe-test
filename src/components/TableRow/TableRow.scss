@@ -12,6 +12,23 @@
       color: $text-light-color;
       font-size: 14px;
     }
+
+    .status {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      background-color: #545f7d1a;
+
+      &.status_Pending {
+        background-color: rgba(233, 178, 0, 0.1);
+        color: $gold-color;
+      }
+
+      &.status_Blacklisted {
+        background-color: rgba(228, 3, 59, 0.1);
+        color: $error-color
+      }
+    }
   }
 
   .button_cell {
@@ -27,7 +44,7 @@
       top: 3.5rem;
       right: -2.8rem;
       width: 180px;
-      z-index: 20;
+      z-index: 10;
       background: #FFFFFF;
       border: 1px solid rgba(84, 95, 125, 0.04);
       box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);

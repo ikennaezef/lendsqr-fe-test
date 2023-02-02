@@ -73,7 +73,7 @@ const UserInfo = ({ userDetails }: UserDetailProps) => {
 						<p>User's Tier</p>
 						<div className="stars">
 							<IoIosStar />
-							<IoIosStar />
+							<IoIosStarOutline />
 							<IoIosStarOutline />
 						</div>
 					</div>
@@ -108,7 +108,7 @@ const UserInfo = ({ userDetails }: UserDetailProps) => {
 							</p>
 						</div>
 						<div className="info_group">
-							<h4 className="info_title">FPHONE NUMBER</h4>
+							<h4 className="info_title">PHONE NUMBER</h4>
 							<p className="info_value">{userDetails?.profile?.phoneNumber}</p>
 						</div>
 						<div className="info_group">
@@ -128,17 +128,12 @@ const UserInfo = ({ userDetails }: UserDetailProps) => {
 							<p className="info_value">Single</p>
 						</div>
 						<div className="info_group">
-							<h4 className="info_title">MONTHLY INCOME</h4>
-							<p className="info_value">
-								{userDetails?.education?.monthlyIncome[0]} -{" "}
-								{userDetails?.education?.monthlyIncome[1]}{" "}
-							</p>
+							<h4 className="info_title">CHILDREN</h4>
+							<p className="info_value">None</p>
 						</div>
 						<div className="info_group">
-							<h4 className="info_title">LOAN REPAYMENT</h4>
-							<p className="info_value">
-								{userDetails?.education?.loanRepayment}
-							</p>
+							<h4 className="info_title">TYPE OF RESIDENCE</h4>
+							<p className="info_value">Parent's Apartment</p>
 						</div>
 					</div>
 				</div>

@@ -11,6 +11,7 @@ type RowProps = {
 		email: string;
 		phone: string;
 		date: string;
+		status?: string;
 	};
 };
 
@@ -69,10 +70,12 @@ const TableRow = ({ rowData }: RowProps) => {
 				<span>{truncateText(rowData?.phone)}</span>
 			</td>
 			<td>
-				<span>May 15, 2020 10:00 AM</span>
+				<span>{truncateText("May 15, 2020 10:00 AM")}</span>
 			</td>
 			<td>
-				<span>Inactive</span>
+				<span className={`status status_${rowData.status}`}>
+					{rowData.status}
+				</span>
 			</td>
 			<td className="button_cell">
 				{showOptions && <Options userId={rowData?.id} />}

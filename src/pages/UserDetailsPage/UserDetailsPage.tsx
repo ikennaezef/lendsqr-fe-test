@@ -10,6 +10,7 @@ import {
 } from "../../components/UserInfo/UserInfo";
 
 const UserDetailsPage = () => {
+	const [mobileNavIsOpen, setMobileNavIsOpen] = useState<boolean>(false);
 	const [error, setError] = useState<null | string>(null);
 	const [userDetails, setUserDetails] = useState<UserDetailsType>(
 		{} as UserDetailsType
@@ -36,13 +37,17 @@ const UserDetailsPage = () => {
 		fetchUserDetails();
 	}, [id]);
 
+	const navToggleHandler = () => {
+		setMobileNavIsOpen((navCurrentState) => !navCurrentState);
+	};
+
 	return (
 		<div className="page_container">
 			<div>
-				<TopNav />
+				<TopNav toggleNav={navToggleHandler} />
 			</div>
 			<div className="page_grid">
-				<Sidebar />
+				<Sidebar navIsOpen={mobileNavIsOpen} />
 				<div className="page_content">
 					<div className="button_container">
 						<Link to="/dashboard">
@@ -58,7 +63,13 @@ const UserDetailsPage = () => {
 							<button className="activate_btn">ACTIVATE USER</button>
 						</div>
 					</div>
-					<UserInfo userDetails={userDetails} />
+					{error ? (
+						<div>
+							<span>Sorry an error occured. Please try again</span>
+						</div>
+					) : (
+						<UserInfo userDetails={userDetails} />
+					)}
 				</div>
 			</div>
 		</div>

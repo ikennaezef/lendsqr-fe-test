@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .dataCard_container {
 	background: #ffffff;
@@ -8,6 +9,10 @@
 	width: 240px;
 	height: 160px;
 	padding: 20px 30px;
+
+	@include mobile {
+		width: 100%;
+	}
 
 	.card_inner {
 		display: flex;

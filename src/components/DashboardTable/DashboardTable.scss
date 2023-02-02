@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .wrapper {
   .table_container {
@@ -9,10 +10,18 @@
     margin-top: 40px;
     padding: 30px;
 
+    @include mobile {
+      overflow-x: scroll;
+    }
+
     .table_main {
       background-color: #fff;
       width: 100%;
       border-collapse: collapse;
+
+      @include mobile {
+        overflow-x: scroll;
+      }
 
       thead {
 
@@ -24,6 +33,18 @@
             font-weight: 600;
             text-align: left;
             padding-bottom: 30px;
+
+            @include mobile {
+              padding: 0 1rem;
+            }
+
+            span {
+              display: flex;
+              width: 100%;
+              align-items: center;
+              gap: 0.5rem;
+            }
+
           }
         }
       }
@@ -44,6 +65,11 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+
+    @include mobile {
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
 
     .showing_info {
       display: flex;

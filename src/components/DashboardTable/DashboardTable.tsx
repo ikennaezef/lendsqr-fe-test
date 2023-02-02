@@ -75,7 +75,13 @@ const DashboardTable = ({ users, error }: TableProps) => {
 						</tr>
 					</thead>
 					<tbody>
-						{usersOnCurrentPage.map((user) => {
+						{usersOnCurrentPage.map((user, index) => {
+							let status = "Inactive";
+							if (index % 2 === 0) {
+								status = "Pending";
+							} else if (index % 3 === 0) {
+								status = "Blacklisted";
+							}
 							const userData = {
 								id: user.id,
 								org: user.orgName,
@@ -83,6 +89,7 @@ const DashboardTable = ({ users, error }: TableProps) => {
 								email: user.email,
 								phone: user.phoneNumber,
 								date: user.createdAt,
+								status: status,
 							};
 							return <TableRow key={user.id} rowData={userData} />;
 						})}

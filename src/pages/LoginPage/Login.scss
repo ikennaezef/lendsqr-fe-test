@@ -25,6 +25,10 @@
 
 			img {
 				width: 174px;
+
+				@include mobile {
+					width: 120px;
+				}
 			}
 		}
 

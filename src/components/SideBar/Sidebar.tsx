@@ -2,6 +2,7 @@ import React from "react";
 import "./Sidebar.scss";
 import { BiChevronDown } from "react-icons/bi";
 import NavItem from "../NavItem/NavItem";
+import { Link } from "react-router-dom";
 
 export type RouteType = {
 	id: number;
@@ -38,9 +39,22 @@ const settingsLinks: RouteType[] = [
 	{ id: 3, title: "Audit Logs", icon: "icon-clipboard.svg" },
 ];
 
-const Sidebar = () => {
+const logoutLink: RouteType = {
+	id: 1,
+	title: "Logout",
+	icon: "icon-sign-out.svg",
+};
+
+type SideNavProps = {
+	navIsOpen?: boolean;
+};
+
+const Sidebar = ({ navIsOpen }: SideNavProps) => {
 	return (
-		<nav className="sidebar_container">
+		<nav
+			className={
+				navIsOpen ? "sidebar_container mobile_nav_active" : "sidebar_container"
+			}>
 			<div className="sidebar_inner">
 				<a href="#" className="nav_link switch_org_link">
 					<img src="/images/icon-briefcase.svg" alt="briefcase icon" />
@@ -78,6 +92,17 @@ const Sidebar = () => {
 							<NavItem key={link.id} data={link} />
 						))}
 					</div>
+				</div>
+				<div className="side_nav_bottom">
+					<Link to="/login" className="nav_link">
+						<img
+							src={`/images/icon-sign-out.svg`}
+							alt="logout icon"
+							className="nav_link_icon"
+						/>
+						<span className="link_text">Logout</span>
+					</Link>
+					<span className="version_text">v1.2.0</span>
 				</div>
 			</div>
 		</nav>

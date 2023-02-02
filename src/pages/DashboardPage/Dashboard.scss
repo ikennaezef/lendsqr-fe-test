@@ -1,14 +1,21 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .page_container {
 	background: #fbfbfb;
+
 	.page_grid {
 		display: flex;
 
 		.page_content {
 			padding: 60px;
+			width: 100%;
 
-			.page_title {
+			@include mobile {
+				padding: 10px;
+			}
+
+			&>.page_title {
 				font-size: 1.5rem;
 				font-weight: 500;
 				color: $text-main-color;

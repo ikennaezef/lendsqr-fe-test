@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Dashboard, Login } from "./pages";
+import { Dashboard, Login, UserDetails } from "./pages";
 
 import "./fonts/AvenirNextLTPro-It.otf";
 import "./fonts/AvenirNextLTPro-Regular.otf";
@@ -13,6 +13,8 @@ const App = () => {
 			<Routes>
 				<Route path="/login" element={<Login />} />
 				<Route path="/dashboard" element={<Dashboard />} />
+				<Route path="/user/:id" element={<UserDetails />} />
+				<Route path="/" element={<Login />} />
 			</Routes>
 		</Router>
 	);

@@ -10,16 +10,30 @@
     padding: 30px 30px 0px 30px;
     margin-bottom: 30px;
 
+    @include mobile {
+      padding: 15px 15px 0px 15px;
+    }
+
     .card_top {
       display: flex;
       align-items: center;
       margin-bottom: 2rem;
+
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
 
       .divider {
         height: 80px;
         background-color: $text-light-color;
         opacity: 0.2;
         width: 1px;
+
+        @include mobile {
+          display: none;
+        }
       }
 
       .profile {
@@ -53,6 +67,10 @@
       .user_tier {
         padding: 0px 30px;
 
+        @include mobile {
+          padding: 0;
+        }
+
         p {
           font-size: 14px;
           font-weight: 500;
@@ -74,6 +92,10 @@
       .user_balance {
         padding-left: 30px;
 
+        @include mobile {
+          padding: 0;
+        }
+
         h4 {
           color: $text-main-color;
           font-size: 22px;
@@ -92,6 +114,10 @@
     .card_tabs {
       .tabs_container {
         display: flex;
+
+        @include mobile {
+          overflow-x: scroll;
+        }
 
         .tab_btn {
           @include button-reset;
@@ -119,6 +145,10 @@
     padding: 30px;
     margin-bottom: 30px;
 
+    @include mobile {
+      padding: 15px;
+    }
+
     .info_section {
       padding-bottom: 30px;
       border-bottom: 1px solid rgba(33, 63, 125, 0.1);
@@ -142,6 +172,10 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 1.5rem;
         grid-column-gap: 30px;
+
+        @include mobile {
+          grid-template-columns: 1fr;
+        }
 
         .info_group {
           display: flex;

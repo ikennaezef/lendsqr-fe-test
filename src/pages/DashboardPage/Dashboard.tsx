@@ -10,6 +10,7 @@ import "./Dashboard.scss";
 import { getUsers } from "../../api_calls";
 
 const Dashboard = () => {
+	const [mobileNavIsOpen, setMobileNavIsOpen] = useState<boolean>(false);
 	const [users, setUsers] = useState([]);
 	const [error, setError] = useState<string | null>(null);
 
@@ -29,13 +30,17 @@ const Dashboard = () => {
 		fetchUsers();
 	}, []);
 
+	const navToggleHandler = () => {
+		setMobileNavIsOpen((navCurrentState) => !navCurrentState);
+	};
+
 	return (
 		<div className="page_container">
 			<div>
-				<TopNav />
+				<TopNav toggleNav={navToggleHandler} />
 			</div>
 			<div className="page_grid">
-				<Sidebar />
+				<Sidebar navIsOpen={mobileNavIsOpen} />
 				<div className="page_content">
 					<h2 className="page_title">Users</h2>
 					<DashboardCardsGrid />

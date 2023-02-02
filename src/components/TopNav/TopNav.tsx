@@ -2,8 +2,13 @@ import React from "react";
 import "./TopNav.scss";
 import { MdNotificationsNone, MdSearch } from "react-icons/md";
 import { FaCaretDown } from "react-icons/fa";
+import { HiBars3 } from "react-icons/hi2";
 
-const TopNav = () => {
+type TopNavProps = {
+	toggleNav?: () => void;
+};
+
+const TopNav = ({ toggleNav }: TopNavProps) => {
 	return (
 		<div className="topNav_container">
 			<div className="topNav_inner">
@@ -27,7 +32,7 @@ const TopNav = () => {
 						<img
 							src="/images/user-image.png"
 							className="profile_image"
-							alt="user profile picture"
+							alt="user profile"
 						/>
 						<div className="name_container">
 							<span className="user_name">Adedeji</span>
@@ -35,6 +40,9 @@ const TopNav = () => {
 						</div>
 					</div>
 				</div>
+				<button className="nav_toggle_btn" onClick={toggleNav}>
+					<HiBars3 />
+				</button>
 			</div>
 		</div>
 	);
