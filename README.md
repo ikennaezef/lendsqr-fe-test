@@ -4,6 +4,20 @@
 
 This is an assessment test for Lendqr frontend engineering candidates.
 
+## Stack
+
+- React with TypeScript
+- SCSS
+
+## How to Install and Run the Project
+
+- First of all, clone the project onto your machine by running `git clone https://github.com/ikennaezef/lendsqr-fe-test.git`
+
+- After cloning the project, navigate into the project directory and run
+  `npm start`
+
+- The project should start running in your browser now.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -28,10 +42,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tests
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Tests for this project are located in the `src/__tests__/` directory
+- To run the tests, navigate to the project folder and run
+  `npm run test`
