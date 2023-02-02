@@ -1,0 +1,82 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.filterBox_container {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 270px;
+  z-index: 30;
+  background: #FFFFFF;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 30px 20px;
+
+  .filterBox_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+
+
+    .fields_container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .filter_group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        label {
+          font-size: 14px;
+          font-weight: 500;
+          color: $text-light-color;
+        }
+
+        .filter_input_field,
+        #org_select,
+        #status_select {
+          @include input-reset;
+          height: 40px;
+          border: 1px solid rgba(33, 63, 125, 0.2);
+          border-radius: 8px;
+          padding: 5px 20px;
+          color: $text-light-color;
+          font-size: 14px;
+
+          &::placeholder {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    .buttons_container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      button {
+        @include button-reset;
+        width: 98px;
+        height: 40px;
+        border-radius: 8px;
+        font-weight: 600;
+      }
+
+      .reset_btn {
+        background-color: transparent;
+        border: 1px solid $text-light-color;
+        color: $text-light-color;
+      }
+
+      .filter_btn {
+        background-color: $accent-color;
+        color: #fff;
+      }
+    }
+  }
+}

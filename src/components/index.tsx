@@ -6,3 +6,4 @@ export { default as DashboardCardsGrid } from "./DashboardCardsGrid/DashboardCar
 export { default as DashboardTable } from "./DashboardTable/DashboardTable";
 export { default as TableRow } from "./TableRow/TableRow";
 export { default as UserInfo } from "./UserInfo/UserInfo";
+export { default as FilterBox } from "./FilterBox/FilterBox";

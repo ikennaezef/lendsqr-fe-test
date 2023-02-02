@@ -1,5 +1,5 @@
 import React from "react";
-import { CardProps } from "../DashboardCardsGrid/DashboardCardsGrid";
+import { CardProps } from "../../types";
 import "./DashboardDataCard.scss";
 
 type Props = {

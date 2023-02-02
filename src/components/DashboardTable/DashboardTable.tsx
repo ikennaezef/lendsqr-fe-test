@@ -3,29 +3,87 @@ import "./DashboardTable.scss";
 import { BiFilter, BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import TableRow from "../TableRow/TableRow";
 import ReactPaginate from "react-paginate";
+import FilterBox from "../FilterBox/FilterBox";
+import { FilterParamsType, UserDetailsType } from "../../types";
 
 type TableProps = {
-	users: any[];
+	users: UserDetailsType[];
 	error: string | null;
 };
 
 const DashboardTable = ({ users, error }: TableProps) => {
+	const [filterParameters, setFilterParameters] = useState<FilterParamsType>({
+		org: "",
+		email: "",
+		username: "",
+		date: "",
+		phoneNumber: "",
+		status: "Inactive",
+	});
+	const [showFilter, setShowFilter] = useState<boolean>(false);
+	const [filteredUsers, setFilteredUsers] = useState<UserDetailsType[] | null>(
+		null
+	);
 	const [currentPageNumber, setCurrentPageNumber] = useState<number>(1);
-	const [usersOnCurrentPage, setUsersOnCurrentPage] = useState<any[]>([]);
+	const [usersOnCurrentPage, setUsersOnCurrentPage] = useState<
+		UserDetailsType[]
+	>([]);
 	const usersPerPage = 10;
-	const totalPages = Math.ceil(users.length / usersPerPage);
+	const [totalPages, setTotalPages] = useState<number>(1);
 
 	const changePage = ({ selected }: any) => {
 		setCurrentPageNumber(selected);
 	};
 
+	const editFilterParams = (filterValue: string, param: string) => {
+		setFilterParameters({
+			...filterParameters,
+			[param]: filterValue,
+		});
+	};
+
+	const filterHandler = () => {
+		const usersAfterFilter = users?.filter(
+			(user) =>
+				user.orgName?.indexOf(filterParameters.org) > -1 &&
+				user.email?.indexOf(filterParameters.email) > -1 &&
+				user.userName?.indexOf(filterParameters.username) > -1 &&
+				user.phoneNumber?.indexOf(filterParameters.phoneNumber) > -1
+		);
+		setFilteredUsers(usersAfterFilter);
+		console.log(filterParameters);
+		setShowFilter(false);
+	};
+
+	const resetHandler = () => {
+		setFilterParameters({
+			org: "",
+			email: "",
+			username: "",
+			date: "",
+			phoneNumber: "",
+			status: "Inactive",
+		});
+		setFilteredUsers(null);
+		setShowFilter(false);
+	};
+
 	useEffect(() => {
 		const lowerLimit = (currentPageNumber - 1) * usersPerPage;
 		const upperLimit = lowerLimit + usersPerPage;
-		const currentUsersList = users.slice(lowerLimit, upperLimit);
+		const currentUsersList = filteredUsers
+			? filteredUsers.slice(lowerLimit, upperLimit)
+			: users.slice(lowerLimit, upperLimit);
 		setUsersOnCurrentPage(currentUsersList);
 		window.scroll(0, 0);
-	}, [users, currentPageNumber]);
+	}, [users, filteredUsers, currentPageNumber]);
+
+	useEffect(() => {
+		setTotalPages(Math.ceil(users.length / usersPerPage));
+		if (filteredUsers) {
+			setTotalPages(Math.ceil(filteredUsers.length / usersPerPage));
+		}
+	}, [filteredUsers, users]);
 
 	if (error) {
 		return (
@@ -35,15 +93,30 @@ const DashboardTable = ({ users, error }: TableProps) => {
 		);
 	}
 
+	const toggleFilter = () => {
+		setShowFilter((showingFilter) => !showingFilter);
+	};
+
 	return (
 		<div className="wrapper">
 			<div className="table_container">
+				{showFilter && (
+					<FilterBox
+						onChangeFilterParam={editFilterParams}
+						onFilter={filterHandler}
+						onReset={resetHandler}
+						inputValues={filterParameters}
+					/>
+				)}
 				<table className="table_main">
 					<thead>
 						<tr className="table_headings">
 							<th>
 								<span>
-									ORGANIZATION <BiFilter />
+									ORGANIZATION{" "}
+									<button className="filter_btn" onClick={toggleFilter}>
+										<BiFilter />
+									</button>
 								</span>
 							</th>
 							<th>
