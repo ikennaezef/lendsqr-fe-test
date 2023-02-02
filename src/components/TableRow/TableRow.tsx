@@ -16,7 +16,7 @@ type OptionsProps = {
 const Options = ({ userId }: OptionsProps) => {
 	return (
 		<div className="options_container">
-			<Link to={`/user/${userId}`}>
+			<Link to={`/userdetails/${userId}`}>
 				<div className="option">
 					<img src="/images/icon-eye.svg" alt="eye icon" />
 					<span>View Details</span>

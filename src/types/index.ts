@@ -14,7 +14,7 @@ export type RouteType = {
 export type UserDetailsType = {
 	accountBalance?: string;
 	accountNumber?: string;
-	createdAt?: string;
+	createdAt: string;
 	education?: {
 		duration: string;
 		employmentStatus: string;
@@ -24,7 +24,7 @@ export type UserDetailsType = {
 		officeEmail: string;
 		sector: string;
 	};
-	email?: string;
+	email: string;
 	guarantor?: {
 		address: string;
 		firstName: string;
@@ -32,10 +32,10 @@ export type UserDetailsType = {
 		lastName: string;
 		phoneNumber: string;
 	};
-	id?: string;
+	id: string;
 	lastActiveDate?: string;
-	orgName?: string;
-	phoneNumber?: string;
+	orgName: string;
+	phoneNumber: string;
 	profile?: {
 		address: string;
 		avatar: string;
@@ -51,5 +51,24 @@ export type UserDetailsType = {
 		instagram: string;
 		twitter: string;
 	};
-	userName?: string;
+	userName: string;
+};
+
+export type TableRowType = {
+	id: string;
+	org: string;
+	username: string;
+	email: string;
+	phone: string;
+	date: string;
+	status?: string;
+};
+
+export type FilterParamsType = {
+	org: string;
+	email: string;
+	username: string;
+	date: string;
+	phoneNumber: string;
+	status: string;
 };
