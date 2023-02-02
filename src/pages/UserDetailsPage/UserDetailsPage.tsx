@@ -13,7 +13,6 @@ const UserDetailsPage = () => {
 		{} as UserDetailsType
 	);
 	const { id } = useParams();
-	console.log(id);
 
 	useEffect(() => {
 		const fetchUserDetails = async () => {
@@ -22,7 +21,6 @@ const UserDetailsPage = () => {
 					.then((data) => {
 						setError(null);
 						setUserDetails(data);
-						console.log(data);
 					})
 					.catch((err) => {
 						console.log(err);
@@ -61,7 +59,7 @@ const UserDetailsPage = () => {
 						</div>
 					</div>
 					{error ? (
-						<div>
+						<div className="error_container">
 							<span>Sorry an error occured. Please try again</span>
 						</div>
 					) : (

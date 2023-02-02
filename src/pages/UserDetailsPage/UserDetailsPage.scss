@@ -13,6 +13,7 @@
 
       @include mobile {
         padding: 10px;
+        padding-bottom: 30px;
       }
 
       a {
@@ -77,6 +78,14 @@
             color: $accent-color;
             border: 1px solid $accent-color;
           }
+        }
+      }
+
+      .error_container {
+        padding: 2rem;
+
+        span {
+          color: $text-main-color;
         }
       }
 
