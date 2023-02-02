@@ -3,12 +3,7 @@ import "./Sidebar.scss";
 import { BiChevronDown } from "react-icons/bi";
 import NavItem from "../NavItem/NavItem";
 import { Link } from "react-router-dom";
-
-export type RouteType = {
-	id: number;
-	title: string;
-	icon: string;
-};
+import { RouteType } from "../../types";
 
 const customerLinks: RouteType[] = [
 	{ id: 1, title: "Users", icon: "icon-users.svg" },

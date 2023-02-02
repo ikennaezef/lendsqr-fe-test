@@ -1,13 +1,7 @@
 import React from "react";
+import { CardProps } from "../../types";
 import DashboardDataCard from "../DashboardDataCard/DashboardDataCard";
 import "./DashboardCardsGrid.scss";
-
-export type CardProps = {
-	id: number;
-	title: string;
-	icon: string;
-	digit: string;
-};
 
 const cards: CardProps[] = [
 	{ id: 1, title: "USERS", icon: "users.svg", digit: "2,453" },
