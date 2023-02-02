@@ -64,6 +64,15 @@
       }
 
     }
+
+    .not_found_container {
+      padding: 2rem 0rem;
+
+      p {
+        color: $text-main-color;
+        font-size: 1rem;
+      }
+    }
   }
 
   .table_bottom {

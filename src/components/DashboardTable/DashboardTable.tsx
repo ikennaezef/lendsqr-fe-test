@@ -51,7 +51,6 @@ const DashboardTable = ({ users, error }: TableProps) => {
 				user.phoneNumber?.indexOf(filterParameters.phoneNumber) > -1
 		);
 		setFilteredUsers(usersAfterFilter);
-		console.log(filterParameters);
 		setShowFilter(false);
 	};
 
@@ -168,6 +167,11 @@ const DashboardTable = ({ users, error }: TableProps) => {
 						})}
 					</tbody>
 				</table>
+				{filteredUsers && filteredUsers.length < 1 && (
+					<div className="not_found_container">
+						<p>Sorry, there were no results with those filters.</p>
+					</div>
+				)}
 			</div>
 			<div className="table_bottom">
 				<div className="showing_info">
