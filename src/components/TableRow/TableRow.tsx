@@ -2,17 +2,11 @@ import React, { useState } from "react";
 import "./TableRow.scss";
 import { RxDotsVertical } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { TableRowType } from "../../types";
+import { formatDate, truncateText } from "../../utils";
 
 type RowProps = {
-	rowData: {
-		id: string;
-		org: string;
-		username: string;
-		email: string;
-		phone: string;
-		date: string;
-		status?: string;
-	};
+	rowData: TableRowType;
 };
 
 type OptionsProps = {
@@ -47,14 +41,6 @@ const TableRow = ({ rowData }: RowProps) => {
 		setShowOptions((options) => !options);
 	};
 
-	const truncateText = (str: string) => {
-		if (str.length > 10) {
-			return str.slice(0, 10) + "...";
-		} else {
-			return str;
-		}
-	};
-
 	return (
 		<tr className="table_row">
 			<td>
@@ -70,7 +56,7 @@ const TableRow = ({ rowData }: RowProps) => {
 				<span>{truncateText(rowData?.phone)}</span>
 			</td>
 			<td>
-				<span>{truncateText("May 15, 2020 10:00 AM")}</span>
+				<span>{formatDate(rowData.date)}</span>
 			</td>
 			<td>
 				<span className={`status status_${rowData.status}`}>
