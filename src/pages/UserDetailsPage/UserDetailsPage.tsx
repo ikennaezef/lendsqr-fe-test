@@ -4,10 +4,7 @@ import { getUserDetails } from "../../api_calls";
 import { Sidebar, TopNav, UserInfo } from "../../components";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { Link, useParams } from "react-router-dom";
-import {
-	UserDetailProps,
-	UserDetailsType,
-} from "../../components/UserInfo/UserInfo";
+import { UserDetailsType } from "../../types";
 
 const UserDetailsPage = () => {
 	const [mobileNavIsOpen, setMobileNavIsOpen] = useState<boolean>(false);

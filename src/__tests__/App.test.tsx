@@ -3,8 +3,8 @@ import { createMemoryHistory } from "history";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
-import { Login, UserDetails } from "./pages";
-import App from "./App";
+import { Login, UserDetails } from "../pages";
+import App from "../App";
 
 describe("Correct First Render", () => {
 	it("renders correctly without crashing", () => {

@@ -44,7 +44,9 @@ const Login = () => {
 					<div className="loginPage_right">
 						<div>
 							<h2 className="welcome_title">Welcome!</h2>
-							<h5 className="subtitle">Enter details to login.</h5>
+							<h5 className="subtitle" data-testid="login_text">
+								Enter details to login.
+							</h5>
 							<form
 								className="login_form"
 								onSubmit={onSubmitForm}
