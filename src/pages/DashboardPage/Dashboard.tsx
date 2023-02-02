@@ -43,6 +43,8 @@ const Dashboard = () => {
 				<Sidebar navIsOpen={mobileNavIsOpen} />
 				<div className="page_content">
 					<h2 className="page_title">Users</h2>
+					<DashboardCardsGrid />
+					<DashboardTable users={users} error={error} />
 				</div>
 			</div>
 		</div>
