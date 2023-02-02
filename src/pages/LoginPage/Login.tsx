@@ -77,9 +77,9 @@ const Login = () => {
 										</span>
 									</div>
 								)}
-								<a href="#" className="forgot_password_link">
+								<button className="forgot_password_link">
 									FORGOT PASSWORD?
-								</a>
+								</button>
 								<div className="login_btn_container">
 									<button id="login_btn">LOG IN</button>
 								</div>

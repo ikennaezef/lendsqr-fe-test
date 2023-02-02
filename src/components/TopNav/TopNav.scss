@@ -74,6 +74,9 @@
 			}
 
 			.docs_link {
+				@include button-reset;
+				background: transparent;
+				text-decoration: underline;
 				display: inline-block;
 				color: $text-main-color;
 				font-size: 1rem;

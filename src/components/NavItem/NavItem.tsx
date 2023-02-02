@@ -1,5 +1,5 @@
 import React from "react";
-import { RouteType } from "../SideBar/Sidebar";
+import { RouteType } from "../../types";
 import "./NavItem.scss";
 
 type NavItemProps = {
@@ -9,14 +9,14 @@ type NavItemProps = {
 
 const NavItem = ({ isActive, data }: NavItemProps) => {
 	return (
-		<a href="#" className={`nav_link ${isActive && "active_link"}`}>
+		<button className={`nav_link ${isActive && "active_link"}`}>
 			<img
 				src={`/images/${data.icon}`}
 				alt={data.title}
 				className="nav_link_icon"
 			/>
 			<span className="link_text">{data.title}</span>
-		</a>
+		</button>
 	);
 };
 

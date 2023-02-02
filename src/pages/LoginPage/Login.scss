@@ -144,6 +144,8 @@
 
 
 						.forgot_password_link {
+							@include button-reset;
+							background: transparent;
 							color: $accent-color;
 							font-size: 0.8rem;
 							font-weight: 600;

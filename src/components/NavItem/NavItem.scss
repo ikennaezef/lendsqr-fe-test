@@ -1,6 +1,9 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .nav_link {
+	@include button-reset;
+	background-color: #fff;
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;

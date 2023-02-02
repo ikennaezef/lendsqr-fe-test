@@ -22,9 +22,7 @@ const TopNav = ({ toggleNav }: TopNavProps) => {
 					</button>
 				</div>
 				<div className="topNav_right">
-					<a href="#" className="docs_link">
-						Docs
-					</a>
+					<button className="docs_link">Docs</button>
 					<button className="notification_btn">
 						<MdNotificationsNone color="inherit" />
 					</button>
