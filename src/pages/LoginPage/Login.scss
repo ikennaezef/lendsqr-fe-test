@@ -27,7 +27,7 @@
 				width: 174px;
 
 				@include mobile {
-					width: 120px;
+					width: 120px
 				}
 			}
 		}
@@ -112,7 +112,7 @@
 							background: #ffffff;
 							height: 50px;
 							padding: 0.2rem 1rem;
-							margin-bottom: 1.5rem;
+							margin-bottom: 0.6rem;
 
 							input {
 								@include input-reset;
@@ -130,6 +130,18 @@
 								font-family: "AvenirBold", sans-serif;
 							}
 						}
+
+						.error_container {
+							margin: 0.5rem 0;
+							padding: 0;
+
+							.error_message {
+								display: inline-block;
+								color: $error-color;
+								font-size: 12px;
+							}
+						}
+
 
 						.forgot_password_link {
 							color: $accent-color;
